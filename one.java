@@ -24,7 +24,7 @@ public class one {
         int[] routes_qnt = get_routes_qnt_arr(start_pos, finish_pos, sum_step, mult_step);
         String route = "";
         int position = routes_qnt.length - 1;
-        while (position > 1) {
+        while (position > start_pos) {
             if (position % mult_step == 0 && routes_qnt[position / mult_step] != 0) {
                 position /= mult_step;
                 route += " Comm2";
@@ -55,10 +55,10 @@ public class one {
     }
 
     public static void main(String[] args) {
-        int start = 1;
-        int finish = 7;
-        int c = 1;
-        int d = 2;
+        int start = 2;
+        int finish = 10;
+        int c = 4;
+        int d = 3;
         System.out.printf("Хмммм. Пройти от %d до %d, используя команды 'прибавить %d' и 'умножить на %d'.", start, finish, c, d);
         System.out.println();
         if (start < finish) {
